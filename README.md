@@ -1,21 +1,37 @@
-# DPO Training with TRL and Modal
+# Narrative Similarity
 
-Project untuk melakukan fine-tuning Large Language Model (LLM) menggunakan **Direct Preference Optimization (DPO)** dengan **Hugging Face TRL**, **PEFT/LoRA**, dan **Modal GPU**.
+Project untuk melakukan fine-tuning Large Language Model (LLM) mdan ***Post training* **Direct Preference Optimization (DPO)** dengan **Hugging Face TRL**, **PEFT/LoRA**, dan **Modal GPU**.
 
 ## Project Structure
 
 ```text
-dpo-project/
+Narrative-Similarity/
 │
 ├── data/
-│   ├── train.jsonl
-│   └── eval.jsonl
-│
+│   ├── narrative-similarity-dataset-main
+│   │      ├── narrative-similarity-dataset-main
+│   │          ├── dev
+│   │          │    ├── dev_track_a.jsonl
+│   │          │    └── dev_track_b.jsonl
+│   │          ├── sample
+│   │          │    ├── sample_track_a.jsonl
+│   │          │    └── sample_track_b.jsonl
+│   │          ├── test
+│   │               ├── labels
+│   │               │    ├── test_track_a_labels.jsonl
+│   │               │    └── test_track_b_labels.jsonl
+│   │               ├── test_track_a.jsonl
+│   │               ├── test_track_b_instances_with_details.jsonl
+│   │               └── test_track_b.jsonl
+│   ├── sft_dataset_all_columns_accepted.jsonl
+│   ├── sft_dataset_all_columns_rejected.jsonl
+│   ├── sythentic_data_for_classification.jsonl
+│   └── sythentic_data_for_contrastive_learning.jsonl
 ├── src/
-│   ├── train.py
-│   └── inference.py
+│   ├── __init__.py
+│   ├── data_loader.py
+│   └── prompt_template.py
 │
-├── modal_app.py
 ├── requirements.txt
 └── README.md
 ```
